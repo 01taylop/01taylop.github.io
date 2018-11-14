@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<div>
+  {% if page.app %}
+    {% include apps/{{ page.app }}.html %}
+  {% endif %}
+</div>

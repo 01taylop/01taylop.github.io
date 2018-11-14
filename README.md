@@ -1,2 +1,5 @@
-# 01taylop.github.io
-Portfolio
+# Patrick Taylor
+
+### Commands
+
+`jekyll serve`
