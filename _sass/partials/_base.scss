@@ -19,8 +19,11 @@ html {
 
 body {
   width: 100%;
-  min-width: 320px;
-  background-color: #fff;
+  min-height: 100vH;
+  min-width: 100vW;
+  background-color: #E73C7E;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
   color: $font-color;
   font-family: 'Comfortaa', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $font-size;
@@ -31,43 +34,84 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  -webkit-animation: Gradient 60s ease infinite;
+  -moz-animation: Gradient 60s ease infinite;
+  animation: Gradient 60s ease infinite;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 60px;
-  padding: 17px 40px 13px;
-  background-color: rgba(0,0,0,0.1);
+.grid {
+  display: grid;
+  min-height: 100vH;
+  min-width: 100vW;
+  padding: 10px;
 
-  h1 {
-    color: #fff;
-    font-size: 26px;
-    line-height: 30px;
-    margin: 0;
-  }
-}
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header header work work work"
+    "london london london london wfb wfb wfb wfb"
+    "about about about about skills skills social social"
+    "about about about about skills skills contact contact";
 
-#home {
   section {
-    min-height: 100vH;
-    padding: 80px 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 16px;
+
+    &.item-header {
+      grid-area: header;
+    }
+    &.item-work {
+      grid-area: work;
+    }
+    &.item-london {
+      grid-area: london;
+    }
+    &.item-wfb {
+      grid-area: wfb;
+    }
+    &.item-about {
+      grid-area: about;
+    }
+    &.item-skills {
+      grid-area: skills;
+    }
+    &.item-social {
+      grid-area: social;
+    }
+    &.item-contact {
+      grid-area: contact;
+    }
+
+    h1 {
+      margin: 0 0 26px 0;
+      color: #fff;
+      font-size: 36px;
+      line-height: 40px;
+    }
+
+    h1 + p {
+      font-size: 24px;
+      line-height: 34px;
+    }
+
     h2 {
-      text-align: center;
+      margin: 0 0 10px 0;
+      color: #fff;
+      font-size: 26px;
+      line-height: 30px;
     }
-    &:nth-child(odd) {
-      background-color: #4abdac;
-      h2 {
-        color: #fff;
-      }
+
+    p {
+      margin: 0 0 10px 0;
+      color: #fff;
+      font-size: 18px;
+      line-height: 26px;
     }
-    &:nth-child(even) {
-      background-color: #fc4a1a;
-      h2 {
-        color: #fff;
-      }
+
+    *:last-child {
+      margin-bottom: 0;
     }
   }
 }
