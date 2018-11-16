@@ -40,6 +40,10 @@ body {
   animation: Gradient 60s ease infinite;
 }
 
+// On mobile, hide content - show based on scroll position
+// Show content on hover, focus?
+// Move gradient based on mouse position?
+
 .grid {
   display: grid;
   min-height: 100vH;
@@ -73,6 +77,11 @@ body {
     }
     &.item-about {
       grid-area: about;
+
+      img {
+        border-radius: 50%;
+        margin: 0 20px 10px 0;
+      }
     }
     &.item-skills {
       grid-area: skills;
