@@ -35,9 +35,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  -webkit-animation: Gradient 60s ease infinite;
-  -moz-animation: Gradient 60s ease infinite;
-  animation: Gradient 60s ease infinite;
+  -webkit-animation: gradient 60s ease infinite;
+  -moz-animation: gradient 60s ease infinite;
+  animation: gradient 60s ease infinite;
 }
 
 // On mobile, hide content - show based on scroll position
@@ -117,6 +117,16 @@ body {
       color: #fff;
       font-size: 18px;
       line-height: 26px;
+    }
+
+    a {
+      color: #fff;
+      font-size: 20px;
+
+      &.icon-link {
+        text-decoration: none;
+        margin-right: 10px;
+      }
     }
 
     *:last-child {
