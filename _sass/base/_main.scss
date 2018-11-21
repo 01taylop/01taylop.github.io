@@ -68,6 +68,12 @@ body {
     }
     &.item-work {
       grid-area: work;
+
+      img {
+        @include opacity(0.6);
+
+        margin-top: 10px;
+      }
     }
     &.item-london {
       grid-area: london;
@@ -121,9 +127,9 @@ body {
 
     a {
       color: #fff;
-      font-size: 20px;
 
       &.icon-link {
+        font-size: 20px;
         text-decoration: none;
         margin-right: 10px;
       }

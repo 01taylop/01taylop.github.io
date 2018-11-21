@@ -1,11 +1,15 @@
-@keyframes gradient {
-  0% {
-    background-position: 0 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0 50%
-  }
+@mixin font-size-rem($pixels) {
+  // sass-lint:disable no-disallowed-properties, no-duplicate-properties
+  $value: strip-unit($pixels);
+
+  font-size: $value + px;
+  font-size: ($value / 16) + rem;
+}
+
+@mixin opacity($opacity) {
+  $opacity-ie: $opacity * 100;
+
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity-ie);
+  zoom: 1;
 }

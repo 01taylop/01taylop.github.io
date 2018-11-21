@@ -4,51 +4,12 @@ feature: home
 ---
 
 <div class='grid'>
-  <section class='item-header'>
-    <h1>Patrick Taylor</h1>
-    <p>👋🏻 Hello, I'm a London based full-stack developer with a passion for creative, clean and intuitive user-experiences.</p>
-  </section>
-  <section class='item-work'>
-    <h2>Work</h2>
-    <p>✈️ I love travelling, exploring and technology; I combine those passions working on exciting projects for the travel company Expedia.</p>
-    <span>Expedia Logo</span>
-  </section>
-  <section class='item-london'>
-    <h2>London Tube Map</h2>
-  </section>
-  <section class='item-wfb'>
-    <h2>Making Buildings Wireless Friendly</h2>
-  </section>
-  <section class='item-about'>
-    <h2>About</h2>
-    <img src="{{ site.baseurl }}/assets/profile.jpg" srcset="{{ site.baseurl }}/assets/profile@2x.jpg 2x" align="left"/>
-    <p>🤓 Using the best practiced web standards and latest cutting-edge technologies, I create beautiful, professional websites and mobile apps with intuitive and rich user experiences.</p>
-    <p>I am currently paying off my BSc (Multimedia Technology and Design) and an MSc (Mobile Application Design) degrees; both from the University of Kent.</p>
-  </section>
-  <section class='item-skills'>
-    <h2>Skills</h2>
-    <p>👨🏻‍💻 Awesome skills include; Javascript, AWS, Swift, CSS, HTML, maybe others.</p>
-    <p>Rusty skills include Objective-C, Clojure, PHP and others that I have forced myself to forget.</p>
-  </section>
-  <section class='item-social'>
-    <h2>Social</h2>
-    <div class='social'>
-      <a href='http://instagram.com/01taylop' target='_blank' class='icon-link'>
-        <i class='icon-instagram'></i>
-      </a>
-      <a href='http://www.twitter.com/patchfalcon' target='_blank' class='icon-link'>
-        <i class='icon-twitter'></i>
-      </a>
-      <a href='http://uk.linkedin.com/in/ptemedia' target='_blank' class='icon-link'>
-        <i class='icon-linkedin'></i>
-      </a>
-      <a href='http://stackoverflow.com/users/1359306/patrick' target='_blank' class='icon-link'>
-        <i class='icon-stackoverflow'></i>
-      </a>
-    </div>
-  </section>
-  <section class='item-contact'>
-    <h2>Contact</h2>
-    <p>✉️ You can get in touch by sending an <a href='mailto:hello@patricktayloredwards.com?body=Your brain is estimated to have more than 100 billion neurons, which is about the number of stars in the Milky Way galaxy.'>interesting fact</a>.</p>
-  </section>
+  <section class='item-header'>{% include header.html %}</section>
+  <section class='item-work'>{% include work.html %}</section>
+  <section class='item-london'>{% include london.html %}</section>
+  <section class='item-wfb'>{% include wfb.html %}</section>
+  <section class='item-about'>{% include about.html %}</section>
+  <section class='item-skills'>{% include skills.html %}</section>
+  <section class='item-social'>{% include social.html %}</section>
+  <section class='item-contact'>{% include contact.html %}</section>
 </div>

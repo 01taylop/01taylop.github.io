@@ -2,12 +2,15 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@charset "utf-8";
+@charset 'utf-8';
 
-// Partials
-@import
-  "theme",
-  "mixins/all",
-  "partials/base",
-  "partials/fonts"
-;
+@import '_theme';
+
+@import 'mixins/_all';
+@import 'mixins/_animations';
+@import 'mixins/_media-queries';
+@import 'mixins/_sass-helpers';
+
+@import 'typography/_icons';
+
+@import 'base/_main';
