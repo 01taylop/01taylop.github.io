@@ -110,9 +110,18 @@ body {
     }
     &.item-london {
       grid-area: london;
+
+      img {
+        @include opacity(0.8)
+      }
     }
     &.item-wfb {
       grid-area: wfb;
+
+      img {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 10px;
+      }
     }
     &.item-about {
       grid-area: about;
