@@ -51,13 +51,46 @@ body {
   padding: 10px;
 
   grid-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "header header header header header work work work"
-    "london london london london wfb wfb wfb wfb"
-    "about about about about skills skills social social"
-    "about about about about skills skills contact contact";
+    "header"
+    "work"
+    "london"
+    "wfb"
+    "about"
+    "skills"
+    "social"
+    "contact";
+
+  @include media('screen', '>=small') {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "work work"
+      "london london"
+      "wfb wfb"
+      "about about"
+      "skills social"
+      "contact contact";
+  }
+  @include media('screen', '>=medium') {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header work"
+      "london london london"
+      "wfb wfb wfb"
+      "about about about"
+      "skills social contact";
+  }
+  @include media('screen', '>=large') {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header header header work work work"
+      "london london london london wfb wfb wfb wfb"
+      "about about about about skills skills social social"
+      "about about about about skills skills contact contact";
+  }
 
   section {
     background-color: rgba(0, 0, 0, 0.1);
@@ -102,20 +135,20 @@ body {
     h1 {
       margin: 0 0 26px 0;
       color: #fff;
-      font-size: 36px;
-      line-height: 40px;
+      font-size: 34px;
+      line-height: 38px;
     }
 
     h1 + p {
-      font-size: 24px;
-      line-height: 34px;
+      font-size: 22px;
+      line-height: 32px;
     }
 
     h2 {
       margin: 0 0 10px 0;
       color: #fff;
       font-size: 26px;
-      line-height: 30px;
+      line-height: 34px;
     }
 
     p {
@@ -127,9 +160,13 @@ body {
 
     a {
       color: #fff;
+      transition: opacity .2s ease;
+      &:hover {
+        @include opacity(0.6);
+      }
 
       &.icon-link {
-        font-size: 20px;
+        font-size: 24px;
         text-decoration: none;
         margin-right: 10px;
       }
