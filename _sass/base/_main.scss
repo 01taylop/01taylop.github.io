@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,700,300|Quattrocento");
+//sass-lint:disable no-color-literals, no-disallowed-properties, no-url-domains, no-url-protocols
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700,300|Quattrocento');
 
 * {
   box-sizing: inherit;
@@ -19,11 +21,10 @@ html {
 
 body {
   width: 100%;
-  min-height: 100vH;
   min-width: 100vW;
-  background-color: #E73C7E;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-  background-size: 400% 400%;
+  min-height: 100vH;
+  background-color: #f8f8f8;
+
   color: $font-color;
   font-family: 'Comfortaa', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $font-size;
@@ -35,9 +36,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  -webkit-animation: gradient 60s ease infinite;
-  -moz-animation: gradient 60s ease infinite;
-  animation: gradient 60s ease infinite;
+  &::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    content: '';
+    z-index: -1;
+
+    -webkit-animation: gradient 60s ease infinite;
+    -moz-animation: gradient 60s ease infinite;
+    animation: gradient 60s ease infinite;
+  }
 }
 
 // On mobile, hide content - show based on scroll position
@@ -46,55 +59,55 @@ body {
 
 .grid {
   display: grid;
-  min-height: 100vH;
   min-width: 100vW;
+  min-height: 100vH;
   padding: 10px;
 
   grid-gap: 10px;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-template-areas:
-    "header"
-    "work"
-    "london"
-    "wfb"
-    "about"
-    "skills"
-    "social"
-    "contact";
+    'header'
+    'work'
+    'london'
+    'wfb'
+    'about'
+    'skills'
+    'social'
+    'contact';
 
   @include media('screen', '>=small') {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "header header"
-      "work work"
-      "london london"
-      "wfb wfb"
-      "about about"
-      "skills social"
-      "contact contact";
+      'header header'
+      'work work'
+      'london london'
+      'wfb wfb'
+      'about about'
+      'skills social'
+      'contact contact';
   }
   @include media('screen', '>=medium') {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-      "header header work"
-      "london london london"
-      "wfb wfb wfb"
-      "about about about"
-      "skills social contact";
+      'header header work'
+      'london london london'
+      'wfb wfb wfb'
+      'about about about'
+      'skills social contact';
   }
   @include media('screen', '>=large') {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-      "header header header header header work work work"
-      "london london london london wfb wfb wfb wfb"
-      "about about about about skills skills social social"
-      "about about about about skills skills contact contact";
+      'header header header header header work work work'
+      'london london london london wfb wfb wfb wfb'
+      'about about about about skills skills social social'
+      'about about about about skills skills contact contact';
   }
 
   section {
-    background-color: rgba(0, 0, 0, 0.1);
     padding: 16px;
+    background-color: rgba(0, 0, 0, .1);
 
     &.item-header {
       grid-area: header;
@@ -103,7 +116,7 @@ body {
       grid-area: work;
 
       img {
-        @include opacity(0.6);
+        @include opacity(.6);
 
         margin-top: 10px;
       }
@@ -112,23 +125,23 @@ body {
       grid-area: london;
 
       img {
-        @include opacity(0.8)
+        @include opacity(.8);
       }
     }
     &.item-wfb {
       grid-area: wfb;
 
       img {
-        background: rgba(255, 255, 255, 0.6);
         padding: 10px;
+        background: rgba(255, 255, 255, .6);
       }
     }
     &.item-about {
       grid-area: about;
 
       img {
-        border-radius: 50%;
         margin: 0 20px 10px 0;
+        border-radius: 50%;
       }
     }
     &.item-skills {
@@ -142,7 +155,7 @@ body {
     }
 
     h1 {
-      margin: 0 0 26px 0;
+      margin: 0 0 26px;
       color: #fff;
       font-size: 34px;
       line-height: 38px;
@@ -154,31 +167,35 @@ body {
     }
 
     h2 {
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       color: #fff;
       font-size: 26px;
       line-height: 34px;
     }
 
     p {
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       color: #fff;
       font-size: 18px;
       line-height: 26px;
     }
 
     a {
-      color: #fff;
       transition: opacity .2s ease;
+      color: #fff;
       &:hover {
-        @include opacity(0.6);
+        @include opacity(.6);
       }
 
       &.icon-link {
+        margin-right: 10px;
         font-size: 24px;
         text-decoration: none;
-        margin-right: 10px;
       }
+    }
+
+    img {
+      max-width: 100%;
     }
 
     *:last-child {
