@@ -43,6 +43,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+
     background-size: 400% 400%;
     content: '';
     z-index: -1;
@@ -54,7 +55,6 @@ body {
 }
 
 // On mobile, hide content - show based on scroll position
-// Show content on hover, focus?
 // Move gradient based on mouse position?
 
 .grid {
@@ -109,6 +109,48 @@ body {
     padding: 16px;
     background-color: rgba(0, 0, 0, .1);
 
+    h1 {
+      margin: 0 0 26px;
+      color: #fff;
+      font-size: 34px;
+      line-height: 38px;
+    }
+
+    h1 + p {
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 18px;
+      line-height: 26px;
+    }
+
+    a {
+      transition: opacity .2s ease;
+      color: #fff;
+      &:hover {
+        @include opacity(.6);
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    *:last-child {
+      margin-bottom: 0;
+    }
+
     &.item-header {
       grid-area: header;
     }
@@ -153,6 +195,10 @@ body {
       flex-direction: column;
       flex-wrap: wrap;
 
+      h2 {
+        margin-bottom: 0;
+      }
+
       .social {
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
@@ -160,7 +206,7 @@ body {
         flex-grow: 2;
 
         a {
-          margin: 10px;
+          padding: 10px;
           font-size: 30px;
           text-decoration: none;
           justify-self: center;
@@ -183,48 +229,6 @@ body {
     }
     &.item-contact {
       grid-area: contact;
-    }
-
-    h1 {
-      margin: 0 0 26px;
-      color: #fff;
-      font-size: 34px;
-      line-height: 38px;
-    }
-
-    h1 + p {
-      font-size: 22px;
-      line-height: 32px;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      color: #fff;
-      font-size: 26px;
-      line-height: 34px;
-    }
-
-    p {
-      margin: 0 0 10px;
-      color: #fff;
-      font-size: 18px;
-      line-height: 26px;
-    }
-
-    a {
-      transition: opacity .2s ease;
-      color: #fff;
-      &:hover {
-        @include opacity(.6);
-      }
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    *:last-child {
-      margin-bottom: 0;
     }
   }
 }
