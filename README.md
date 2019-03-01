@@ -1,5 +1,5 @@
 # Patrick Taylor
 
-### Commands
+## Commands
 
 `jekyll serve`
