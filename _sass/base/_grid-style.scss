@@ -14,11 +14,6 @@
       line-height: 38px;
     }
 
-    h1 + p {
-      font-size: 22px;
-      line-height: 32px;
-    }
-
     h2 {
       margin: 0 0 10px;
       font-size: 26px;
@@ -48,6 +43,17 @@
 
     &.item-header {
       grid-area: header;
+
+      h1 {
+        display: inline-block;
+        padding-right: 5px;
+        border-right: 3px solid #fff;
+        animation: blink-caret 1.2s step-end infinite;
+        & + p {
+          font-size: 20px;
+          line-height: 32px;
+        }
+      }
     }
     &.item-work {
       grid-area: work;
