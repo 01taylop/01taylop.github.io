@@ -49,6 +49,7 @@
         padding-right: 5px;
         border-right: 3px solid #fff;
         animation: blink-caret 1.2s step-end infinite;
+        speak: none;
         & + p {
           font-size: 20px;
           line-height: 32px;

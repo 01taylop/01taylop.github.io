@@ -78,7 +78,7 @@ function theDomHasLoaded(e) {
     setInterval(function() {
       const { flag, greeting } = greetings[Math.floor(Math.random() * greetings.length)]
       typeWelcome(flag, greeting)
-    }, 6000)
+    }, 8000)
   }, 1000);
 }
 
