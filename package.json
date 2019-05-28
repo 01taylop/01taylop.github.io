@@ -1,0 +1,25 @@
+{
+  "name": "patricktaylor.dev",
+  "version": "1.0.0",
+  "description": "The Portfolio of Patrick Taylor",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-plugin-babel": "5.3.0",
+    "eslint-plugin-wyze": "3.4.0"
+  },
+  "scripts": {
+    "lint": "eslint js/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/01taylop/01taylop.github.io.git"
+  },
+  "author": "Patrick Taylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/01taylop/01taylop.github.io/issues"
+  },
+  "homepage": "https://patricktaylor.dev"
+}

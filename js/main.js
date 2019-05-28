@@ -1,54 +1,4 @@
-// Init
-
-document.addEventListener("DOMContentLoaded", theDomHasLoaded, false)
-
-window.addEventListener("load", pageFullyLoaded, false)
-
-function theDomHasLoaded(e) {
-  visibilityFn.init()
-  greetingFn.init()
-}
-
-function pageFullyLoaded(e) {
-  console.log("pageFullyLoaded")
-}
-
-// Visibility
-
-const visibilityFn = {
-  hidden: undefined,
-  visibilityChange: undefined,
-
-  init: function() {
-    if (typeof document.hidden !== "undefined") {
-      visibilityFn.hidden = "hidden"
-      visibilityFn.visibilityChange = "visibilitychange"
-    } else if (typeof document.msHidden !== "undefined") {
-      visibilityFn.hidden = "msHidden"
-      visibilityFn.visibilityChange = "msvisibilitychange"
-    } else if (typeof document.webkitHidden !== "undefined") {
-      visibilityFn.hidden = "webkitHidden"
-      visibilityFn.visibilityChange = "webkitvisibilitychange"
-    }
-
-    if (typeof document.addEventListener === "undefined" || visibilityFn.hidden === undefined) {
-      console.log("Page Visibility API not supported.")
-    } else {
-      document.addEventListener(visibilityFn.visibilityChange, visibilityFn.handleVisibilityChange, false)
-    }
-  },
-
-  handleVisibilityChange: function() {
-    if (document[visibilityFn.hidden]) {
-      greetingFn.stopInterval()
-    } else {
-      greetingFn.startInterval()
-    }
-  },
-}
-
 // Greeting
-
 const greetingFn = {
   currentGreeting: {
     flag: "🇬🇧",
@@ -100,22 +50,22 @@ const greetingFn = {
     greeting: "Hallå",
   }],
 
-  init: function() {
-    setTimeout(function() {
+  init() {
+    setTimeout(() => {
       greetingFn.typeGreeting("🇬🇧", "Hello")
       greetingFn.startInterval()
     }, 1000)
   },
 
-  startInterval: function() {
+  startInterval() {
     greetingFn.stopInterval()
-    greetingFn.greetingInterval = setInterval(function() {
+    greetingFn.greetingInterval = setInterval(() => {
       const { flag, greeting } = greetingFn.getRandomGreeting()
       greetingFn.typeGreeting(flag, greeting)
     }, 8000)
   },
 
-  stopInterval: function() {
+  stopInterval() {
     if (greetingFn.greetingInterval) {
       clearInterval(greetingFn.greetingInterval)
       greetingFn.greetingInterval = undefined
@@ -124,11 +74,11 @@ const greetingFn = {
     }
   },
 
-  getRandomGreeting: function() {
+  getRandomGreeting() {
     return greetingFn.greetings[Math.floor(Math.random() * greetingFn.greetings.length)]
   },
 
-  typeGreeting: function(flag, greeting) {
+  typeGreeting(flag, greeting) {
     greetingFn.currentGreeting = {
       flag,
       greeting,
@@ -136,7 +86,7 @@ const greetingFn = {
 
     let previousGreeting = document.getElementById("greeting").innerHTML
     let typedIndex = 0
-    let typewriterTimeout = undefined
+    let typewriterTimeout
 
     function typewriter() {
       // Clear Timeout
@@ -168,3 +118,50 @@ const greetingFn = {
     typewriter()
   },
 }
+
+// Visibility
+const visibilityFn = {
+  hidden: undefined,
+  visibilityChange: undefined,
+
+  init() {
+    if (typeof document.hidden !== "undefined") {
+      visibilityFn.hidden = "hidden"
+      visibilityFn.visibilityChange = "visibilitychange"
+    } else if (typeof document.msHidden !== "undefined") {
+      visibilityFn.hidden = "msHidden"
+      visibilityFn.visibilityChange = "msvisibilitychange"
+    } else if (typeof document.webkitHidden !== "undefined") {
+      visibilityFn.hidden = "webkitHidden"
+      visibilityFn.visibilityChange = "webkitvisibilitychange"
+    }
+
+    if (typeof document.addEventListener === "undefined" || visibilityFn.hidden === undefined) {
+      console.log("Page Visibility API not supported.")
+    } else {
+      document.addEventListener(visibilityFn.visibilityChange, visibilityFn.handleVisibilityChange, false)
+    }
+  },
+
+  handleVisibilityChange() {
+    if (document[visibilityFn.hidden]) {
+      greetingFn.stopInterval()
+    } else {
+      greetingFn.startInterval()
+    }
+  },
+}
+
+// Init
+function theDomHasLoaded() {
+  visibilityFn.init()
+  greetingFn.init()
+}
+
+function pageFullyLoaded() {
+  console.log("pageFullyLoaded")
+}
+
+// Start
+document.addEventListener("DOMContentLoaded", theDomHasLoaded, false)
+window.addEventListener("load", pageFullyLoaded, false)

@@ -1,8 +1,21 @@
-_site
+# dependencies
+node_modules
 
+# jekyll
 bundler
 
+# production
+_site
+
+# testing
+
+# misc
 .DS_Store
 .idea
 .jekyll-metadata
 .sass-cache
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
