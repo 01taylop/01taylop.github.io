@@ -7,10 +7,12 @@
     "babel-eslint": "10.0.1",
     "eslint": "5.16.0",
     "eslint-plugin-babel": "5.3.0",
-    "eslint-plugin-wyze": "3.4.0"
+    "eslint-plugin-wyze": "3.4.0",
+    "sass-lint": "1.13.1"
   },
   "scripts": {
-    "lint": "eslint js/**/*.js"
+    "lint": "sass-lint -v -q && eslint js/**/*.js",
+    "start": "jekyll serve"
   },
   "repository": {
     "type": "git",
