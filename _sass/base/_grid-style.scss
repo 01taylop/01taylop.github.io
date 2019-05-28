@@ -72,8 +72,15 @@
     &.item-about {
       grid-area: about;
       img {
-        margin: 0 20px 10px 0;
+        display: block;
+        margin: 0 auto 10px;
+        float: none;
         border-radius: 50%;
+        @include media('screen', '>=small') {
+          display: inline-block;
+          margin: 0 20px 10px 0;
+          float: left;
+        }
       }
     }
     &.item-skills {
