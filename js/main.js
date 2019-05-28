@@ -1,9 +1,23 @@
-document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
+document.addEventListener("DOMContentLoaded", theDomHasLoaded, false)
 
-window.addEventListener("load", pageFullyLoaded, false);
+window.addEventListener("load", pageFullyLoaded, false)
 
 function theDomHasLoaded(e) {
-  const greetings = [{
+  setTimeout(function() {
+    greetingFn.typeGreeting("🇬🇧", "Hello")
+    setInterval(function() {
+      const { flag, greeting } = greetingFn.getRandomGreeting()
+      greetingFn.typeGreeting(flag, greeting)
+    }, 8000)
+  }, 1000)
+}
+
+function pageFullyLoaded(e) {
+  console.log("pageFullyLoaded")
+}
+
+const greetingFn = {
+  greetings: [{
     flag: "🇧🇷",
     greeting: "Oi",
   }, {
@@ -45,43 +59,44 @@ function theDomHasLoaded(e) {
   }, {
     flag: "🇸🇪",
     greeting: "Hallå",
-  }]
+  }],
 
-  const typeSpeed = 80
-  let previousI = 0
-  let previousGreeting = ""
+  getRandomGreeting: function() {
+    return greetingFn.greetings[Math.floor(Math.random() * greetingFn.greetings.length)]
+  },
 
-  function typeWelcome(flag, greeting) {
-    let i = 0;
+  typeGreeting: function(flag, greeting) {
+    let previousGreeting = document.getElementById("greeting").innerHTML
+    let typedIndex = 0
+    let typewriterTimeout = undefined
+
     function typewriter() {
-      if (previousI >= 0) {
-        document.getElementById("greeting").innerHTML = previousGreeting.substring(0, previousI);
-        if (previousI === 0) {
-          document.getElementById("flag").innerHTML = flag
-        }
-        previousI -= 1;
-        setTimeout(typewriter, typeSpeed);
-      } else if (i < greeting.length) {
-        document.getElementById("greeting").innerHTML = greeting.substring(0, i + 1);
-        i += 1;
-        setTimeout(typewriter, typeSpeed);
-      } else {
-        previousI = greeting.length
+      // Clear Timeout
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout)
+        typewriterTimeout = undefined
+      }
+
+      // Delete/Type Logic
+      if (previousGreeting.length > 0) {
+        previousGreeting = previousGreeting.substring(0, previousGreeting.length - 1)
+        document.getElementById("greeting").innerHTML = previousGreeting
+      } else if (typedIndex === 0) {
+        typedIndex += 1
+        document.getElementById("flag").innerHTML = flag
+      } else if (typedIndex < greeting.length) {
+        typedIndex += 1
+        document.getElementById("greeting").innerHTML = greeting.substring(0, typedIndex)
+      }
+
+      // Iterate
+      if (typedIndex === greeting.length) {
         previousGreeting = greeting
+      } else {
+        typewriterTimeout = setTimeout(typewriter, 80)
       }
     }
+
     typewriter()
-  }
-
-  setTimeout(function() {
-    typeWelcome("🇬🇧", "Hello")
-    setInterval(function() {
-      const { flag, greeting } = greetings[Math.floor(Math.random() * greetings.length)]
-      typeWelcome(flag, greeting)
-    }, 8000)
-  }, 1000);
-}
-
-function pageFullyLoaded(e) {
-  console.log("pageFullyLoaded");
+  },
 }
