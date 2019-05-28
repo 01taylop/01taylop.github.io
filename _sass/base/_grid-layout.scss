@@ -2,9 +2,9 @@
   display: grid;
   min-width: 100vW;
   min-height: 100vH;
-  padding: 10px;
+  padding: 16px;
 
-  grid-gap: 10px;
+  grid-gap: 16px;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -44,5 +44,9 @@
     'london london london london wfb wfb wfb wfb'
     'about about about about skills skills social social'
     'about about about about skills skills contact contact';
+  }
+  @include media('screen', '>=xlarge') {
+    padding: 24px;
+    grid-gap: 24px;
   }
 }
