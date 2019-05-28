@@ -3,13 +3,19 @@ layout: default
 feature: home
 ---
 
-<div class='grid'>
-  <section class='item-header'>{% include header.html %}</section>
-  <section class='item-work'>{% include work.html %}</section>
-  <section class='item-london'>{% include london.html %}</section>
-  <section class='item-wfb'>{% include wfb.html %}</section>
-  <section class='item-about'>{% include about.html %}</section>
-  <section class='item-skills'>{% include skills.html %}</section>
-  <section class='item-social'>{% include social.html %}</section>
-  <section class='item-contact'>{% include contact.html %}</section>
+<div class='grid-container'>
+  <div class='grid grid-main'>
+    <section class='item-header'>{% include header.html %}</section>
+    <section class='item-work'>{% include work.html %}</section>
+  </div>
+  <div class='grid grid-projects'>
+    <section class='item-london'>{% include london.html %}</section>
+    <section class='item-wfb'>{% include wfb.html %}</section>
+  </div>
+  <div class='grid grid-information'>
+    <section class='item-about'>{% include about.html %}</section>
+    <section class='item-skills'>{% include skills.html %}</section>
+    <section class='item-social'>{% include social.html %}</section>
+    <section class='item-contact'>{% include contact.html %}</section>
+  </div>
 </div>
