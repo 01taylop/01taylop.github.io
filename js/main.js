@@ -7,11 +7,18 @@ const greetingFn = {
   greetingInterval: undefined,
 
   greetings: [{
+    flag: "🇬🇧",
+    greeting: "Hello",
+  }, {
     flag: "🇧🇷",
-    greeting: "Oi",
+    time: {
+      morning: "Bom Dia",
+      afternoon: "Boa Tarde",
+      evening: "Boa Noite",
+    },
   }, {
     flag: "🇨🇳",
-    greeting: "Nǐ hǎo",
+    greeting: "Nín Hǎo",
   }, {
     flag: "🇩🇰",
     greeting: "Hej",
@@ -23,28 +30,52 @@ const greetingFn = {
     greeting: "Hei",
   }, {
     flag: "🇫🇷",
-    greeting: "Bonjour",
+    time: {
+      morning: "Bonjour",
+      afternoon: "Bonjour",
+      evening: "Bonsoir",
+    },
   }, {
     flag: "🇩🇪",
-    greeting: "Guten Tag",
+    time: {
+      morning: "Guten Morgen",
+      afternoon: "Guten Tag",
+      evening: "Guten Abend",
+    },
   }, {
     flag: "🇮🇹",
-    greeting: "Ciao",
+    time: {
+      morning: "Buon Giorno",
+      afternoon: "Buon Pomeriggio",
+      evening: "Buona Sera",
+    },
   }, {
     flag: "🇯🇵",
-    greeting: "Konnichiwa",
+    time: {
+      morning: "Ohayo",
+      afternoon: "Konnichiwa",
+      evening: "Konbanwa",
+    },
   }, {
     flag: "🇳🇱",
     greeting: "Hallo",
   }, {
     flag: "🇵🇹",
-    greeting: "Olá",
+    time: {
+      morning: "Bom Dia",
+      afternoon: "Boa Tarde",
+      evening: "Boa Noite",
+    },
   }, {
     flag: "🇷🇴",
     greeting: "Salut",
   }, {
     flag: "🇪🇸",
-    greeting: "Hola",
+    time: {
+      morning: "Buenos Dias",
+      afternoon: "Buenas Tardes",
+      evening: "Buenas Noches",
+    },
   }, {
     flag: "🇸🇪",
     greeting: "Hallå",
@@ -60,9 +91,19 @@ const greetingFn = {
   startInterval() {
     greetingFn.stopInterval()
     greetingFn.greetingInterval = setInterval(() => {
-      const { flag, greeting } = greetingFn.getRandomGreeting()
-      greetingFn.typeGreeting(flag, greeting)
-    }, 8000)
+      const { flag, greeting, time } = greetingFn.getRandomGreeting()
+      if (time) {
+        const date = new Date()
+        const hours = date.getHours()
+        if (hours < 12) {
+          return greetingFn.typeGreeting(flag, time.morning)
+        } else if (hours < 18) {
+          return greetingFn.typeGreeting(flag, time.afternoon)
+        }
+        return greetingFn.typeGreeting(flag, time.evening)
+      }
+      return greetingFn.typeGreeting(flag, greeting)
+    }, 6000)
   },
 
   stopInterval() {
