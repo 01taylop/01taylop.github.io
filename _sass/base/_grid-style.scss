@@ -47,10 +47,19 @@
 
       h1 {
         display: inline-block;
+        position: relative;
         padding-right: 5px;
-        border-right: 3px solid $font-colour;
         speak: none;
-        animation: blink-caret 1.2s step-end infinite;
+        &::after {
+          @include pseudo;
+          top: 0;
+          right: -2px;
+          width: 3px;
+          height: 1em;
+          border-radius: 2px;
+          background-color: $font-colour;
+          animation: blink-caret 1.2s step-end infinite;
+        }
         & + p {
           @include font-size-rem(20px);
           line-height: 32px;
