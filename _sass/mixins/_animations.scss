@@ -16,9 +16,9 @@
 
 @keyframes blink-caret {
   from, to {
-    border-color: transparent;
+    @include opacity(0);
   }
   50% {
-    border-color: $font-colour;
+    @include opacity(.5);
   }
 }
