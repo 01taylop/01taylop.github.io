@@ -10,9 +10,15 @@
     }
 
     h1 {
-      @include font-size-rem(34px);
-      margin: 0 0 26px;
-      line-height: 38px;
+      @include font-size-rem(28px);
+      margin: 0 0 20px;
+      line-height: 32px;
+
+      @include media('screen', '>=small') {
+        @include font-size-rem(34px);
+        margin: 0 0 26px;
+        line-height: 38px;
+      }
     }
 
     h2 {
@@ -70,7 +76,7 @@
       grid-area: work;
       img {
         @include opacity(.8);
-        max-width: 160px;
+        width: 160px;
         margin-top: 10px;
       }
     }
@@ -84,8 +90,8 @@
       grid-area: about;
       img {
         display: block;
-        max-width: 200px;
-        max-height: 200px;
+        width: 200px;
+        height: 200px;
         margin: 0 auto 10px;
         float: none;
         border-radius: 50%;
