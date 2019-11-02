@@ -1,18 +1,29 @@
 .grid {
   section {
     padding: 16px;
-    background-color: $section-bg;
     border-radius: 2px;
+    background-color: $section-bg;
 
     h1, h2, p, a {
       color: $font-colour;
       text-shadow: $font-shadow;
     }
 
+    h1, h2 {
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: 600;
+    }
+
     h1 {
-      @include font-size-rem(34px);
-      margin: 0 0 26px;
-      line-height: 38px;
+      @include font-size-rem(28px);
+      margin: 0 0 20px;
+      line-height: 32px;
+
+      @include media('screen', '>=small') {
+        @include font-size-rem(34px);
+        margin: 0 0 26px;
+        line-height: 38px;
+      }
     }
 
     h2 {
@@ -47,10 +58,19 @@
 
       h1 {
         display: inline-block;
+        position: relative;
         padding-right: 5px;
-        border-right: 3px solid $font-colour;
         speak: none;
-        animation: blink-caret 1.2s step-end infinite;
+        &::after {
+          @include pseudo;
+          top: 0;
+          right: -2px;
+          width: 3px;
+          height: 1em;
+          border-radius: 2px;
+          background-color: $font-colour;
+          animation: blink-caret 1.2s step-end infinite;
+        }
         & + p {
           @include font-size-rem(20px);
           line-height: 32px;
@@ -60,7 +80,8 @@
     &.item-work {
       grid-area: work;
       img {
-        @include opacity(.6);
+        @include opacity(.8);
+        width: 160px;
         margin-top: 10px;
       }
     }
@@ -74,6 +95,8 @@
       grid-area: about;
       img {
         display: block;
+        width: 200px;
+        height: 200px;
         margin: 0 auto 10px;
         float: none;
         border-radius: 50%;

@@ -12,6 +12,7 @@ _site
 # misc
 .DS_Store
 .idea
+.jekyll-cache
 .jekyll-metadata
 .sass-cache
 

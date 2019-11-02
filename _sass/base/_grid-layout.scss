@@ -1,7 +1,7 @@
 .grid-container {
   display: grid;
-  min-width: 100vw;
-  min-height: 100vh;
+  max-width: 1500px;
+  margin: 0 auto;
   padding: 16px;
 
   grid-template-rows: auto;

@@ -13,3 +13,9 @@
   filter: alpha(opacity=$opacity-ie);
   zoom: 1;
 }
+
+@mixin pseudo($display: block, $position: absolute, $content: '') {
+  display: $display;
+  position: $position;
+  content: $content;
+}
