@@ -69,7 +69,7 @@
     &.item-work {
       grid-area: work;
       img {
-        @include opacity(.6);
+        @include opacity(.8);
         margin-top: 10px;
       }
     }

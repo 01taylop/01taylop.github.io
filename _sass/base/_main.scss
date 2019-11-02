@@ -36,6 +36,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   &::after {
+    @include opacity(.8);
+
     position: fixed;
     top: 0;
     left: 0;

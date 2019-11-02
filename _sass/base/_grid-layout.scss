@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  min-width: 100vW;
-  min-height: 100vH;
+  max-width: 1500px;
+  margin: 0 auto;
   padding: 16px;
 
   grid-gap: 16px;
@@ -10,8 +10,6 @@
   grid-template-areas:
   'header'
   'work'
-  'london'
-  'wfb'
   'about'
   'skills'
   'social'
@@ -22,8 +20,6 @@
     grid-template-areas:
     'header header'
     'work work'
-    'london london'
-    'wfb wfb'
     'about about'
     'skills social'
     'contact contact';
@@ -32,8 +28,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
     'header header work'
-    'london london london'
-    'wfb wfb wfb'
     'about about about'
     'skills social contact';
   }
@@ -41,7 +35,6 @@
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas:
     'header header header header header work work work'
-    'london london london london wfb wfb wfb wfb'
     'about about about about skills skills social social'
     'about about about about skills skills contact contact';
   }

@@ -103,7 +103,7 @@ const greetingFn = {
         return greetingFn.typeGreeting(flag, time.evening)
       }
       return greetingFn.typeGreeting(flag, greeting)
-    }, 6000)
+    }, 8000)
   },
 
   stopInterval() {
