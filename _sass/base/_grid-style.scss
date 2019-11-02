@@ -9,6 +9,11 @@
       text-shadow: $font-shadow;
     }
 
+    h1, h2 {
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: 600;
+    }
+
     h1 {
       @include font-size-rem(28px);
       margin: 0 0 20px;
