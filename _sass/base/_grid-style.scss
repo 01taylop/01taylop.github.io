@@ -16,8 +16,22 @@
 
     h1 {
       @include font-size-rem(28px);
+      display: inline-block;
       margin: 0 0 20px;
       line-height: 32px;
+      position: relative;
+      padding-right: 5px;
+      speak: none;
+      &::after {
+        @include pseudo;
+        top: 0;
+        right: -2px;
+        width: 3px;
+        height: 1em;
+        border-radius: 2px;
+        background-color: $font-colour;
+        animation: blink-caret 1.2s step-end infinite;
+      }
 
       @include media('screen', '>=small') {
         @include font-size-rem(34px);
@@ -55,23 +69,8 @@
 
     &.item-header {
       grid-area: header;
-
-      h1 {
-        display: inline-block;
-        position: relative;
-        padding-right: 5px;
-        speak: none;
-        &::after {
-          @include pseudo;
-          top: 0;
-          right: -2px;
-          width: 3px;
-          height: 1em;
-          border-radius: 2px;
-          background-color: $font-colour;
-          animation: blink-caret 1.2s step-end infinite;
-        }
-        & + p {
+      @include media('screen', '>=small') {
+        h1 + p {
           @include font-size-rem(20px);
           line-height: 32px;
         }
@@ -81,7 +80,7 @@
       grid-area: work;
       img {
         @include opacity(.8);
-        width: 160px;
+        width: 140px;
         margin-top: 10px;
       }
     }

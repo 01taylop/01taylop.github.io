@@ -18,9 +18,9 @@ html {
 }
 
 body {
-  width: 100%;
-  min-width: 100vW;
-  min-height: 100vH;
+  width: 100vw;
+  min-width: 300px;
+  min-height: 100vh;
   background: linear-gradient(#333, #333);
   background-color: #f8f8f8;
 
@@ -46,7 +46,7 @@ body {
     height: 100vh;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 
-    background-size: 400% 400%;
+    background-size: 400vw 400vh;
     content: '';
     z-index: -1;
 
