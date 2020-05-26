@@ -95,9 +95,10 @@ const greetingFn = {
       if (time) {
         const date = new Date()
         const hours = date.getHours()
-        if (hours < 12) {
+        if (hours > 3 && hours < 12) {
           return greetingFn.typeGreeting(flag, time.morning)
-        } else if (hours < 18) {
+        }
+        if (hours >= 12 && hours < 18) {
           return greetingFn.typeGreeting(flag, time.afternoon)
         }
         return greetingFn.typeGreeting(flag, time.evening)

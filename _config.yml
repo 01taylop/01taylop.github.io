@@ -8,8 +8,7 @@
 # Site settings
 title: Patrick Taylor
 email: hello@patricktaylor.dev
-description: > # this means to ignore newlines
-  Portfolio
+description: Hello! I'm a software engineer working either from London or São Paulo.
 url: https://patricktaylor.dev
 facebook_username: patricktayloredwards
 github_username:  01taylop

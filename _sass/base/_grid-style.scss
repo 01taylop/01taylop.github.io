@@ -17,10 +17,10 @@
     h1 {
       @include font-size-rem(28px);
       display: inline-block;
-      margin: 0 0 20px;
-      line-height: 32px;
       position: relative;
+      margin: 0 0 20px;
       padding-right: 5px;
+      line-height: 32px;
       speak: none;
       &::after {
         @include pseudo;
