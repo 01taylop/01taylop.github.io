@@ -1,27 +1,21 @@
 {
   "name": "patricktaylor.dev",
-  "version": "1.0.0",
   "description": "A portfolio of my work and achievements.",
-  "dependencies": {},
-  "devDependencies": {
-    "babel-eslint": "10.1.0",
-    "eslint": "7.19.0",
-    "eslint-plugin-babel": "5.3.1",
-    "eslint-plugin-wyze": "3.4.0",
-    "sass-lint": "1.13.1"
-  },
+  "repository": "https://github.com/01taylop/01taylop.github.io.git",
+  "version": "1.0.0",
   "scripts": {
     "lint": "sass-lint -v -q && eslint js/**/*.js",
     "start": "jekyll serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/01taylop/01taylop.github.io.git"
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-babel": "5.3.1",
+    "eslint-plugin-wyze": "3.4.0",
+    "sass-lint": "1.13.1"
   },
   "author": "Patrick Taylor",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/01taylop/01taylop.github.io/issues"
-  },
   "homepage": "https://patricktaylor.dev"
 }
