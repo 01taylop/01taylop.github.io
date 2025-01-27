@@ -1,22 +1,23 @@
+# build
+_site
+
 # dependencies
 node_modules
 
 # jekyll
-bundler
-
-# production
-_site
-
-# testing
-
-# misc
-.DS_Store
-.idea
 .jekyll-cache
 .jekyll-metadata
-.sass-cache
+bundler
 
 # logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# misc
+.DS_Store
+.idea
+.iml
+.log
+.sass-cache
+.vscode

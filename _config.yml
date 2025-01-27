@@ -1,19 +1,22 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: Patrick Taylor
+tagline: Software Engineer
+description: Hi! I'm a London-based software engineer, currently working at Expedia.
 email: hello@patricktaylor.dev
-description: Hello! I'm a software engineer working either from London or São Paulo.
+social:
+  name: Patrick Taylor
+  links:
+    - https://github.com/01taylop/
+    - https://www.instagram.com/01taylop/
+    - https://www.linkedin.com/in/patrick-taylor1/
+    - https://stackoverflow.com/users/1359306/patrick
 url: https://patricktaylor.dev
-facebook_username: patricktayloredwards
-github_username:  01taylop
-twitter_username: patchfalcon
 
 # Build settings
-markdown: kramdown
 highlighter: rouge
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+timezone: Europe/London
