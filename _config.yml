@@ -4,12 +4,14 @@ tagline: Software Engineer
 description: Hi! I'm a London-based software engineer, currently working at Expedia.
 email: hello@patricktaylor.dev
 social:
-  name: Patrick Taylor
-  links:
-    - https://github.com/01taylop/
-    - https://www.instagram.com/01taylop/
-    - https://www.linkedin.com/in/patrick-taylor1/
-    - https://stackoverflow.com/users/1359306/patrick
+  - name: GitHub
+    url: https://github.com/01taylop/
+  - name: Instagram
+    url: https://www.instagram.com/01taylop/
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/patrick-taylor1/
+  - name: Stack Overflow
+    url: https://stackoverflow.com/users/1359306/patrick
 url: https://patricktaylor.dev
 
 # Build settings
