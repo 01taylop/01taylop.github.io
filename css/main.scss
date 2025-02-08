@@ -4,18 +4,11 @@
 
 @charset 'utf-8';
 
-@import '_theme';
+@use 'typography/_fonts';
+@use 'typography/_icons';
 
-@import 'mixins/_all';
-@import 'mixins/_animations';
-@import 'mixins/_media-queries';
-@import 'mixins/_sass-helpers';
+@use 'base/_main';
+@use 'base/_grid-layout';
+@use 'base/_grid-style';
 
-@import 'typography/_fonts';
-@import 'typography/_icons';
-
-@import 'base/_main';
-@import 'base/_grid-layout';
-@import 'base/_grid-style';
-
-@import '_helpers';
+@use '_helpers';

@@ -1,9 +1,13 @@
+@use "sass:math";
+
+@use './_sass-helpers' as *;
+
 @mixin font-size-rem($pixels) {
   // sass-lint:disable no-disallowed-properties, no-duplicate-properties
   $value: strip-unit($pixels);
 
   font-size: $value + px;
-  font-size: ($value / 16) + rem;
+  font-size: math.div($value, 16) + rem;
 }
 
 @mixin opacity($opacity) {

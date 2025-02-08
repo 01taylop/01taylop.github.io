@@ -1,3 +1,5 @@
+@use '../mixins/_media-queries' as *;
+
 .grid {
   display: grid;
   max-width: 1500px;
