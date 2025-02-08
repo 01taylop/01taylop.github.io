@@ -1,5 +1,8 @@
 //sass-lint:disable no-color-literals, no-disallowed-properties
 
+@use '../mixins/_all' as *;
+@use '../_theme' as *;
+
 * {
   box-sizing: inherit;
   &::before, &::after {

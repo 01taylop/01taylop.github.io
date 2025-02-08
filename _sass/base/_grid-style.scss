@@ -1,7 +1,11 @@
+@use '../mixins/_all' as *;
+@use '../mixins/_media-queries' as *;
+@use '../_theme' as *;
+
 .grid {
   section {
     padding: 16px;
-    border-radius: 2px;
+    border-radius: 12px;
     background-color: $section-bg;
 
     h1, h2, p, a {
@@ -56,6 +60,7 @@
       transition: opacity .2s ease;
       &:hover {
         @include opacity(.6);
+        cursor: pointer;
       }
     }
 

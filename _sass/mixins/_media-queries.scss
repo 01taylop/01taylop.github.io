@@ -1,3 +1,9 @@
+@use "sass:list";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+
 //
 // Media Queries
 // https://css-tricks.com/approaches-media-queries-sass/
@@ -32,15 +38,15 @@ $unit-intervals: (
 
 // Generates a media query based on a list of conditions
 @mixin media($conditions...) {
-  @for $i from 1 through length($conditions) {
-    $conditions: set-nth($conditions, $i, parse-expression(nth($conditions, $i)));
+  @for $i from 1 through list.length($conditions) {
+    $conditions: list.set-nth($conditions, $i, parse-expression(list.nth($conditions, $i)));
   }
 
   $branches: get-query-branches($conditions);
   $query: '';
 
   @each $branch in $branches {
-    @if (str-length($query) != 0) {
+    @if (string.length($query) != 0) {
       $query: $query + ', ';
     }
 
@@ -59,13 +65,13 @@ $unit-intervals: (
 
   // Getting initial snapshot and looking for groups
   @each $expression in $expressions {
-    @if (str-length($result) != 0) {
+    @if (string.length($result) != 0) {
       $result: $result + ' and ';
     }
 
-    @if (type-of($expression) == 'string') {
+    @if (meta.type-of($expression) == 'string') {
       $result: $result + $expression;
-    } @else if (type-of($expression) == 'list') {
+    } @else if (meta.type-of($expression) == 'list') {
       $result: $result + nth($expression, 1);
       $has-groups: true;
     } @else {
@@ -76,7 +82,7 @@ $unit-intervals: (
   // If we have groups, we have to create all possible combinations
   @if $has-groups {
     @each $expression in $expressions {
-      @if (type-of($expression) == 'list') {
+      @if (meta.type-of($expression) == 'list') {
         $first: nth($expression, 1);
 
         @each $member in $expression {
@@ -101,35 +107,35 @@ $unit-intervals: (
   $result: '';
   $is-width: true;
 
-  @if (type-of($expression) != 'string') {
-    @warn 'Expression with type `#{type-of($expression)}` detected, string expected.';
+  @if (meta.type-of($expression) != 'string') {
+    @warn 'Expression with type `#{meta.type-of($expression)}` detected, string expected.';
   }
 
   // Separating the operator from the rest of the expression
-  @if (str-slice($expression, 2, 2) == '=') {
-    $operator: str-slice($expression, 1, 2);
-    $value: str-slice($expression, 3);
+  @if (string.slice($expression, 2, 2) == '=') {
+    $operator: string.slice($expression, 1, 2);
+    $value: string.slice($expression, 3);
   } @else {
-    $operator: str-slice($expression, 1, 1);
-    $value: str-slice($expression, 2);
+    $operator: string.slice($expression, 1, 1);
+    $value: string.slice($expression, 2);
   }
 
   // Checking what type of expression we're dealing with
-  @if map-has-key($breakpoints, $value) {
-    $result: map-get($breakpoints, $value);
-  } @else if map-has-key($media-expressions, $expression) {
-    $result: map-get($media-expressions, $expression);
+  @if map.has-key($breakpoints, $value) {
+    $result: map.get($breakpoints, $value);
+  } @else if map.has-key($media-expressions, $expression) {
+    $result: map.get($media-expressions, $expression);
     $is-width: false;
   } @else {
-    $result: to-number($value);
+    $result: string.to-number($value);
   }
 
   @if ($is-width) {
-    $unit: unit($result);
+    $unit: math.unit($result);
     $interval: 0;
 
-    @if (map-has-key($unit-intervals, $unit)) {
-      $interval: map-get($unit-intervals, $unit);
+    @if (map.has-key($unit-intervals, $unit)) {
+      $interval: map.get($unit-intervals, $unit);
     } @else {
       @warn 'Unknown unit: #{$unit}';
     }

@@ -2,10 +2,13 @@
   "name": "patricktaylor.dev",
   "description": "A portfolio of my work and achievements.",
   "repository": "https://github.com/01taylop/01taylop.github.io.git",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
+    "clean": "rm -rf _site",
+    "build": "yarn run clean && bundle exec jekyll build",
     "lint": "sass-lint -v -q && eslint js/**/*.js",
-    "start": "jekyll serve"
+    "postinstall": "bundle install",
+    "start": "bundle exec jekyll serve"
   },
   "dependencies": {},
   "devDependencies": {
@@ -16,6 +19,6 @@
     "sass-lint": "1.13.1"
   },
   "author": "Patrick Taylor",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://patricktaylor.dev"
 }
