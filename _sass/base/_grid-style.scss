@@ -1,4 +1,5 @@
 @use '../mixins/_all' as *;
+@use '../mixins/_animations' as *;
 @use '../mixins/_media-queries' as *;
 @use '../_theme' as *;
 
@@ -84,8 +85,7 @@
     &.item-work {
       grid-area: work;
       img {
-        @include opacity(.8);
-        width: 140px;
+        @include opacity(.9);
         margin-top: 10px;
       }
     }
