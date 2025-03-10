@@ -9,7 +9,6 @@
     "lint": "sass-lint -v -q && eslint js/**/*.js",
     "start": "bundle exec jekyll serve"
   },
-  "dependencies": {},
   "devDependencies": {
     "babel-eslint": "10.1.0",
     "eslint": "7.32.0",
@@ -19,5 +18,6 @@
   },
   "author": "Patrick Taylor",
   "license": "MIT",
-  "homepage": "https://patricktaylor.dev"
+  "homepage": "https://patricktaylor.dev",
+  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
 }
