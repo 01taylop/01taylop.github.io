@@ -59,3 +59,9 @@ body {
     animation: gradient 60s ease infinite;
   }
 }
+
+#greeting {
+  &.korean {
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  }
+}

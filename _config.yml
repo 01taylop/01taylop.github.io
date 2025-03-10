@@ -1,8 +1,8 @@
 # Site settings
 title: Patrick Taylor
-tagline: Software Engineer
-description: Hi! I'm a London-based software engineer, currently working at Expedia.
+description: Portfolio of Patrick Taylor, a London-based software engineer at Expedia.
 email: hello@patricktaylor.dev
+locale: en_GB
 social:
   - name: GitHub
     url: https://github.com/01taylop/
@@ -15,6 +15,10 @@ social:
 url: https://patricktaylor.dev
 
 # Build settings
+exclude:
+  - package.json
+  - README.md
+  - yarn.lock
 highlighter: rouge
 markdown: kramdown
 permalink: pretty

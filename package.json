@@ -2,7 +2,7 @@
   "name": "patricktaylor.dev",
   "description": "A portfolio of my work and achievements.",
   "repository": "https://github.com/01taylop/01taylop.github.io.git",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "clean": "rm -rf _site",
     "build": "yarn run clean && bundle exec jekyll build",
