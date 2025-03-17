@@ -8,3 +8,9 @@ A portfolio of my work and achievements.
 yarn install
 bundle install
 ```
+
+### Convert image to webp
+
+```sh
+cwebp assets/profile@2x.jpg -o assets/profile.webp
+```
