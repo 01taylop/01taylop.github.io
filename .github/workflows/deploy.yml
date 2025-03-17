@@ -48,11 +48,16 @@ jobs:
           yarn install --frozen-lockfile
           bundle install
 
+      - name: Lint
+        run: yarn lint
+
       - name: Build site
         run: yarn build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          retention-days: 1
 
   deploy:
     name: Deploy
