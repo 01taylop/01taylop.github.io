@@ -1,4 +1,4 @@
-//sass-lint:disable no-color-literals, no-disallowed-properties
+// sass-lint:disable no-color-literals, no-disallowed-properties
 
 @use '../mixins/_all' as *;
 @use '../_theme' as *;
@@ -23,7 +23,7 @@ html {
 
 body {
   width: 100vw;
-  min-width: 300px;
+  min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(#333, #333);
   background-color: #f8f8f8;
@@ -57,11 +57,5 @@ body {
     -webkit-animation: gradient 60s ease infinite;
     -moz-animation: gradient 60s ease infinite;
     animation: gradient 60s ease infinite;
-  }
-}
-
-#greeting {
-  &.korean {
-    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   }
 }

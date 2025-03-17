@@ -18,30 +18,35 @@
   'contact';
 
   @include media('screen', '>=small') {
+    padding: 16px;
+    grid-gap: 16px;
+
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
     'header header'
     'work work'
     'about about'
-    'skills social'
-    'contact contact';
+    'skills skills'
+    'social contact';
   }
   @include media('screen', '>=medium') {
-    grid-template-columns: repeat(3, 1fr);
+    padding: 24px;
+    grid-gap: 24px;
+
+    grid-template-columns: repeat(9, 1fr);
     grid-template-areas:
-    'header header work'
-    'about about about'
-    'skills social contact';
+    'header header header header header work work work work'
+    'about about about about about about about about about'
+    'skills skills skills social social social contact contact contact';
   }
   @include media('screen', '>=large') {
+    padding: 40px;
+    grid-gap: 26px;
+
     grid-template-columns: repeat(8, 1fr);
     grid-template-areas:
     'header header header header header work work work'
     'about about about about skills skills social social'
     'about about about about skills skills contact contact';
-  }
-  @include media('screen', '>=xlarge') {
-    padding: 24px;
-    grid-gap: 24px;
   }
 }

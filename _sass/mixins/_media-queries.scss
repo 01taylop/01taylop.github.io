@@ -1,19 +1,15 @@
-@use "sass:list";
-@use "sass:map";
-@use "sass:math";
-@use "sass:meta";
-@use "sass:string";
+// Media Queries - https://css-tricks.com/approaches-media-queries-sass/
 
-//
-// Media Queries
-// https://css-tricks.com/approaches-media-queries-sass/
-// --------------------------------------------------
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
 
 $breakpoints: (
-  'small': 500px,
+  'small': 580px,
   'medium': 900px,
-  'large': 1100px,
-  'xlarge': 2000px,
+  'large': 1200px,
 ) !default;
 
 $media-expressions: (
@@ -158,7 +154,7 @@ $unit-intervals: (
   @return $element;
 }
 
-// Replaces the first occurence of the string with the replacement string
+// Replaces the first occurrence of the string with the replacement string
 @function str-replace-first($search, $replace, $subject) {
   $search-start: str-index($subject, $search);
 

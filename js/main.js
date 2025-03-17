@@ -169,13 +169,13 @@ const greetingFn = {
       }
 
       // Delete/Type Logic
-      let delay = 100
+      let delay = 120
 
       if (previousGreeting.length > 0) {
         previousGreeting = previousGreeting.substring(0, previousGreeting.length - 1)
         greetingElement.textContent = replaceHangul(previousGreeting)
         if (previousFlag === "🇰🇷") {
-          delay = 140
+          delay = 160
         }
       } else if (typedIndex === -1) {
         typedIndex += 1
@@ -190,7 +190,7 @@ const greetingFn = {
         const nextGreetingText = greeting.substring(0, typedIndex)
         greetingElement.textContent = replaceHangul(nextGreetingText)
         if (flag === "🇰🇷") {
-          delay = 160
+          delay = 180
         }
       }
 

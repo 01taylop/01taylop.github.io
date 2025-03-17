@@ -1,8 +1,13 @@
 @use '../mixins/_all' as *;
 
-//
-// Animations
-// --------------------------------------------------
+@keyframes blink-caret {
+  from, to {
+    @include opacity(0);
+  }
+  50% {
+    @include opacity(.4);
+  }
+}
 
 @keyframes gradient {
   0% {
@@ -13,14 +18,5 @@
   }
   100% {
     background-position: 0 50%;
-  }
-}
-
-@keyframes blink-caret {
-  from, to {
-    @include opacity(0);
-  }
-  50% {
-    @include opacity(.5);
   }
 }
