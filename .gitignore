@@ -2,28 +2,22 @@
 _site
 
 # dependencies
-node_modules
+node_modules/
 
 # jekyll
 .jekyll-cache
 .jekyll-metadata
 bundler
 
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
 # misc
 .DS_Store
-.idea
+.idea/
 .iml
 .log
 .sass-cache
-.vscode
+.vscode/
 
 # yarn
-.pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
